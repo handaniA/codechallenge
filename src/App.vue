@@ -3,9 +3,23 @@
     <div id="hero">
         <div id="hero-overlay">
           <div class="container">
-            <div class="row">
+            <div class="row mainrow">
               <div class="col-sm-8 offset-sm-2 mt-3">
-                <h1 class="text-center">Form Mahasiswa</h1>
+                <h1 class="text-center">
+                  <span>F</span>
+                  <span>O</span>
+                  <span>R</span>
+                  <span>M</span> &nbsp;
+                  <span>M</span> 
+                  <span>A</span>
+                  <span>H</span>
+                  <span>A</span>
+                  <span>S</span>
+                  <span>I</span>
+                  <span>S</span>
+                  <span>W</span>
+                  <span>A</span>
+                </h1>
                   <form class="mt-3" @submit="handleRegister">
                       <div class="form-group row">
                         <label for="inputnim" class="col-sm-4 col-form-label">NIM</label>
@@ -262,12 +276,14 @@ export default {
         const input = document.querySelectorAll('.form-control');
           for(var i = 0; i < input.length; i++){
             if(input[i].value == ''){
-              console.log('error')
+              input[i].style.borderColor = "red"
             }
             else if( i == input.length-1 ){
               for(var i = 0; i < 9; i++){
               if(input[i].value !== ''){
-              input[i].value = '';}
+              input[i].value = '';
+              input[i].style.borderColor = "white"
+              }
               }
             }
         }
@@ -286,8 +302,79 @@ body{
 }
 
 h1{
-  text-shadow: 5px 5px 8px #cccccc;
   color: white;
+  text-align: center;
+}
+h1 span{
+  animation: animate 12.5s linear infinite;
+}
+hi span:nth-child(1){
+  animation-delay: 0s;
+}
+hi span:nth-child(2){
+  animation-delay: 1s;
+}
+hi span:nth-child(3){
+  animation-delay: 2s;
+}
+hi span:nth-child(4){
+  animation-delay: 3s;
+}
+hi span:nth-child(5){
+  animation-delay: 4s;
+}
+hi span:nth-child(6){
+  animation-delay: 5s;
+}
+hi span:nth-child(7){
+  animation-delay: 6s;
+}
+hi span:nth-child(8){
+  animation-delay: 7s;
+}
+hi span:nth-child(9){
+  animation-delay: 8s;
+}
+hi span:nth-child(10){
+  animation-delay: 9s;
+}
+hi span:nth-child(11){
+  animation-delay: 10s;
+}
+hi span:nth-child(12){
+  animation-delay: 11s;
+}
+hi span:nth-child(13){
+  animation-delay: 12s;
+}
+@keyframes animate
+{
+  0%,100%
+  {
+    color:#fff;
+    filter:blur(2px);
+    text-shadow: 0 0 10px #690718,
+                0 0 20px #690718,
+                0 0 40px #690718,
+                0 0 80px #690718,
+                0 0 120px #690718,
+                0 0 200px #690718,
+                0 0 300px #690718,
+                0 0 400px #690718;
+  }
+  5%,95%
+  {
+    color:white;
+    filter:blur(0px);
+    text-shadow: none;
+  }
+
+}
+.form-group{
+  opacity: 0.8;
+}
+.form-group:hover{
+  opacity: 1;
 }
 #hero{
     background-image: url(./components/1.jpg);
@@ -310,4 +397,39 @@ label{
   color : white;
   font-size: 30px;
 }
+
+@media only screen and (max-width: 700px) {
+  #hero{
+    background-image: url(./components/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 125vh;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #hero{
+    background-image: url(./components/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 160vh;
+  }
+}
+@media only screen and (max-width: 350px) {
+  #hero{
+    background-image: url(./components/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 190vh;
+  }
+}
+
 </style>
